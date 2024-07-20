@@ -1,9 +1,13 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Next.js Starter Blog',
-  author: 'Tails Azimuth',
-  headerTitle: 'TailwindBlog',
-  description: 'A blog created with Next.js and Tailwind.css',
+  title: 'Developer Portfolio',
+  author: 'Jayant Nagle',
+  headerTitle: (
+    <div className="hidden h-6 text-2xl font-semibold sm:block">
+      Jayant. <span className="text-primary-500">DevHub</span>
+    </div>
+  ),
+  description: 'A portfolio created with Next.js and Tailwind.css',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
