@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "next dev",
-    "dev": "cross-env INIT_CWD=$PWD next dev",
-    "build": "cross-env INIT_CWD=$PWD next build && cross-env NODE_OPTIONS='--experimental-json-modules' node ./scripts/postbuild.mjs",
+    "dev": "next dev",
+    "build": "next build && cross-env NODE_OPTIONS='--experimental-json-modules' node ./scripts/postbuild.mjs",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir app --dir components --dir lib --dir layouts --dir scripts",
@@ -13,7 +13,10 @@
   },
   "dependencies": {
     "@headlessui/react": "1.7.19",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
     "@next/bundle-analyzer": "14.2.3",
+    "@next/mdx": "^14.2.5",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.12",
     "autoprefixer": "^10.4.13",
@@ -26,6 +29,7 @@
     "next": "14.2.3",
     "next-contentlayer2": "0.4.6",
     "next-themes": "^0.3.0",
+    "nodemailer": "^6.9.14",
     "pliny": "0.2.1",
     "postcss": "^8.4.24",
     "react": "18.3.1",
@@ -45,6 +49,7 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.24.7",
     "@svgr/webpack": "^8.0.1",
     "@types/mdx": "^2.0.12",
     "@types/react": "^18.2.73",
