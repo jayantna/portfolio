@@ -1,8 +1,9 @@
-import projectsData from '@/data/projectsData'
-import Card from '@/components/Card'
-import { genPageMetadata } from 'app/seo'
+import projectsData from '@/data/projectsData';
+import Card from '@/components/Card';
+import { genPageMetadata } from 'app/seo';
+import Link from '../../components/Link';
 
-export const metadata = genPageMetadata({ title: 'Projects' })
+export const metadata = genPageMetadata({ title: 'Projects' });
 
 export default function Projects() {
   return (
@@ -27,6 +28,9 @@ export default function Projects() {
           </div>
         </div>
       </div>
+      <Link href="/contact" className="my-3 font-handwriting text-2xl text-primary-400">
+        Drop a message if you liked my work.
+      </Link>
     </>
-  )
+  );
 }

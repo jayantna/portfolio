@@ -49,3 +49,24 @@ input:-webkit-autofill:focus {
   display: inline-block;
   vertical-align: middle;
 }
+
+/* START Homepage _ animation */
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.cursor {
+  display: inline;
+  font-weight: bold;
+  animation: blink 1s step-start infinite;
+}
+
+/* END Homepage logo _ animation */

@@ -1,6 +1,6 @@
 // @ts-check
-const { fontFamily } = require('tailwindcss/defaultTheme')
-const colors = require('tailwindcss/colors')
+const { fontFamily } = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
 
 /** @type {import("tailwindcss/types").Config } */
 module.exports = {
@@ -23,6 +23,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-lato)', ...fontFamily.sans],
+        handwriting: ['var(--font-caveat)', 'sans-serif'],
+        sourceCode: ['var(--font-sourceCodePro)', 'sans-serif'],
       },
       colors: {
         primary: colors.pink,
@@ -65,7 +67,25 @@ module.exports = {
           },
         },
       }),
+      keyframes: {
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '50%': { opacity: '1' },
+        },
+        'fade-out': {
+          '50%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
+      },
+      animation: {
+        'fade-in': 'fade-in 0.5s ease-in forwards',
+        'fade-out': 'fade-out 1s ease-out forwards',
+      },
     },
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
-}
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
+};
