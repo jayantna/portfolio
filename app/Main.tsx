@@ -3,7 +3,7 @@ import Button from '@/components/Button';
 import Link from '@/components/Link';
 import Logo from '@/data/logo50px.svg';
 import Image from '@/components/Image';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const InfiniteLoop = ({ items, interval = 2000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -74,13 +74,17 @@ export default function Home() {
             className="'text-gray-900 dark:text-gray-100"
           />
           {nextRender && (
-            <TypingEffect text={'devhub'} onComplete={() => {}} className="text-primary-600" />
+            <TypingEffect
+              text={'devhub'}
+              onComplete={() => {}}
+              className="text-primary-600 dark:text-primary-500"
+            />
           )}
         </span>
         <span className="cursor text-primary-600">_</span>
       </div>
       <div className="scroll-container">
-        <div className="text-center font-sourceCode text-lg font-semibold tracking-widest">
+        <div className="text-center font-sourceCode text-lg tracking-widest">
           <InfiniteLoop items={devRoles} interval={1500} />
         </div>
       </div>

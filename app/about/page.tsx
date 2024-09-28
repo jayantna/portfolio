@@ -17,6 +17,11 @@ export default function Page() {
         <div className="my-3 text-2xl text-primary-600">A Software Engineer based in India 🇮🇳</div>
         <MDXLayoutRenderer code={author.body.code} />
       </AuthorLayout>
+      <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
+        <div className="flex flex-col items-center space-x-2 pt-8">
+          <h2 className="mb-8 text-center text-3xl font-bold">Experience</h2>
+        </div>
+      </div>
     </>
   );
 }
