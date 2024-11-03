@@ -58,6 +58,12 @@ export default function Page() {
           </h1>
         </div>
         <div className="py-5">
+          <div className="pb-6">
+            In my full-time roles, I've collaborated with cross-functional teams to develop, test,
+            and deploy applications that meet client and user needs. My experience working in a team
+            setting has honed my problem-solving skills and taught me the importance of clear
+            communication and effective project management.
+          </div>
           {timelineData.map((event, index) => (
             <div
               className="relative mb-8 flex before:absolute before:bottom-0 before:left-2.5 before:top-5 before:w-[1px] before:bg-gray-500 before:content-['']"

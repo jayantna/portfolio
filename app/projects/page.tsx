@@ -23,12 +23,13 @@ export default function Projects() {
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
+                blog={d.blog}
               />
             ))}
           </div>
         </div>
       </div>
-      <Link href="/contact" className="my-3 font-handwriting text-2xl text-primary-400">
+      <Link href="/contact" className="my-3 font-handwriting text-2xl text-primary-500">
         Drop a message if you liked my work.
       </Link>
     </>

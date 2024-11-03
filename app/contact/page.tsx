@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
 import emailjs from '@emailjs/browser';
+import siteMetadata from '@/data/siteMetadata';
 // import { genPageMetadata } from 'app/seo'
 
 // export const metadata = genPageMetadata({ title: 'Contact' })
@@ -96,7 +97,7 @@ export default function Page() {
                 required
               />
               <Button
-                className="bg-primary-600 text-white shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                className="bg-primary-600 text-white shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:ring-offset-gray-950"
                 type="submit"
               >
                 Send Message
@@ -115,7 +116,7 @@ export default function Page() {
                   Jayant Nagle
                 </div>
                 <div className="text-sm leading-6 text-gray-600 dark:text-gray-400">
-                  naglejnt@gmail.com
+                  {siteMetadata.email}
                 </div>
               </div>
             </figcaption>
