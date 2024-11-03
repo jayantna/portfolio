@@ -49,6 +49,4 @@ yarn-error.log*
 #vscode
 .vscode
 
-#yarn.lock
-yarn.lock
 
