@@ -38,6 +38,7 @@ export default function Page() {
     'Postman',
     'API',
     'Websockets',
+    'HTTP Streaming',
   ];
 
   return (
