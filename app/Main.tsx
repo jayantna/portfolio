@@ -8,6 +8,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'; // Import only the main Swiper CSS
 import { Autoplay } from 'swiper/modules';
 import './swiper.css';
+import { FaEnvelope, FaComments, FaFileDownload } from 'react-icons/fa'; // Import icons
+
 export default function Home() {
   const name: string = 'Jayant.devhub';
   const [nextRender, setNextRender] = useState(false);
@@ -116,26 +118,47 @@ export default function Home() {
 
       <div className="flex flex-col items-center justify-between py-12 sm:flex-row">
         <a
-          className="m-4 w-48 cursor-pointer rounded-md bg-gray-600 px-4 py-2 text-center text-white shadow-lg hover:bg-primary-700 focus:outline-none active:ring-2 active:ring-primary-500 active:ring-offset-2 dark:bg-gray-800 dark:ring-offset-gray-950 dark:hover:bg-primary-700 sm:w-auto"
-          type="button"
           href="/contact"
+          className="m-4 flex w-full cursor-pointer flex-col justify-between rounded-lg border border-gray-300 bg-white p-4 shadow-md transition-shadow duration-300 hover:shadow-lg dark:border-gray-600 dark:bg-gray-900 sm:w-1/3 md:min-h-[130px] lg:min-h-[130px]"
         >
-          Get in touch ➞
+          <div className="flex items-center">
+            <FaEnvelope className="mr-2 text-3xl text-primary-500 dark:text-primary-500" />
+            <h3 className="whitespace-nowrap text-lg font-semibold text-gray-900 dark:text-gray-100">
+              Get in touch
+            </h3>
+          </div>
+          <p className="mt-2 text-gray-500 dark:text-gray-400">
+            Reach out for collaborations or inquiries.
+          </p>
         </a>
+
         <a
-          className="m-4 w-48 cursor-pointer rounded-md bg-gray-600 px-4 py-2 text-center text-white shadow-lg hover:bg-primary-700 focus:outline-none active:ring-2 active:ring-primary-500 active:ring-offset-2 dark:bg-gray-800 dark:ring-offset-gray-950 dark:hover:bg-primary-700 sm:w-auto"
-          type="button"
           href="/testimonials"
+          className="m-4 flex w-full cursor-pointer flex-col justify-between rounded-lg border border-gray-300 bg-white p-4 shadow-md transition-shadow duration-300 hover:shadow-lg dark:border-gray-600 dark:bg-gray-900 sm:w-1/3 md:min-h-[130px] lg:min-h-[130px]"
         >
-          Testimonials 𝍌
+          <div className="flex items-center">
+            <FaComments className="mr-2 text-3xl text-primary-500 dark:text-primary-500" />
+            <h3 className="whitespace-nowrap text-lg font-semibold text-gray-900 dark:text-gray-100">
+              Testimonials
+            </h3>
+          </div>
+          <p className="mt-2 text-gray-500 dark:text-gray-400">
+            See what others say about my work.
+          </p>
         </a>
+
         <a
-          className="m-4 w-48 cursor-pointer rounded-md bg-gray-600 px-4 py-2 text-center text-white shadow-lg hover:bg-primary-700 focus:outline-none active:ring-2 active:ring-primary-500 active:ring-offset-2 dark:bg-gray-800 dark:ring-offset-gray-950 dark:hover:bg-primary-700 sm:w-auto"
-          type="button"
           href="/files/resume.pdf"
+          className="m-4 flex w-full cursor-pointer flex-col justify-between rounded-lg border border-gray-300 bg-white p-4 shadow-md transition-shadow duration-300 hover:shadow-lg dark:border-gray-600 dark:bg-gray-900 sm:w-1/3 md:min-h-[130px] lg:min-h-[130px]"
           download
         >
-          Download Resume ⩔
+          <div className="flex items-center">
+            <FaFileDownload className="mr-2 text-3xl text-primary-500 dark:text-primary-500" />
+            <h3 className="whitespace-nowrap text-lg font-semibold text-gray-900 dark:text-gray-100">
+              Download Resume
+            </h3>
+          </div>
+          <p className="mt-2 text-gray-500 dark:text-gray-400">Get a copy of my resume.</p>
         </a>
       </div>
     </>
