@@ -76,15 +76,10 @@ module.exports = {
           '50%': { opacity: '1' },
           '100%': { opacity: '0' },
         },
-        borderPulse: {
-          '0%, 100%': { borderColor: 'transparent' },
-          '50%': { borderColor: colors.pink[500] },
-        },
       },
       animation: {
         'fade-in': 'fade-in 0.5s ease-in forwards',
         'fade-out': 'fade-out 1s ease-out forwards',
-        'border-pulse': 'borderPulse 1.5s ease-in-out infinite',
       },
     },
   },
