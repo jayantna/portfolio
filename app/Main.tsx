@@ -20,10 +20,10 @@ export default function Home() {
   const devRoles = [
     'SOFTWARE DEVELOPER',
     'FULL-STACK DEVELOPER',
-    'FRONT-END DEVELOPER',
-    'UI/UX DESIGNER',
     'BLOCKCHAIN DEVELOPER',
+    'FRONT-END DEVELOPER',
     'WEB3 DEVELOPER',
+    'UI/UX DESIGNER',
   ];
 
   const logoList = [
