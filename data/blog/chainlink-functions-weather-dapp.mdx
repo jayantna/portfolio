@@ -1,0 +1,163 @@
+---
+title: 'Chainlink Functions Weather Dapp'
+date: '2024-11-12'
+tags: ['ethereum']
+draft: false
+---
+
+_Title_: Chainlink Functions Weather Dapp
+
+_Github_: https://github.com/jayantna/chainlink-functions-weather-dapp
+
+# Chainlink Functions Weather Dapp 🌦️
+
+This project demonstrates how to use Chainlink Functions to fetch real-time weather data from external APIs and integrate it into smart contracts. It leverages Chainlink's decentralized oracle network (DON) to securely execute JavaScript code off-chain and return verified results on-chain.
+
+## Overview
+
+The Chainlink Functions Weather App fetches weather data from public APIs, performs off-chain computation, and securely delivers the results to your smart contract. This allows your decentralized application (dApp) to access reliable weather information without compromising security or decentralization.
+
+## Quickstart Guide 🚀
+
+Follow these steps to run the Chainlink Functions Weather App on a live testnet or local testnet.
+
+### Requirements
+
+- Node.js version [20](https://nodejs.org/en/download/)
+- Deno version [1.36](https://deno.land/manual@v1.36.4/getting_started/installation) (or latest v1.x)
+
+### Steps on Live (Public) Testnets
+
+1. Clone this repository and install dependencies:
+
+```bash
+git clone <your-repo-url>
+cd chainlink-functions-weather-dapp
+npm install
+```
+
+2. Set up environment variables securely using Chainlink's encrypted environment variables tool:
+
+```bash
+npx env-enc set-pw
+npx env-enc set
+```
+
+You will need the following environment variables:
+
+- `PRIVATE_KEY` (your wallet private key)
+- RPC URLs (e.g., `POLYGON_AMOY_RPC_URL`, `ETHEREUM_SEPOLIA_RPC_URL`)
+- Blockchain explorer API keys (e.g., `POLYGONSCAN_API_KEY`, `ETHERSCAN_API_KEY`)
+- `OPENWEATHER_API_KEY` (from [OpenWeatherMap](https://openweathermap.org/api))
+
+3. Simulate your JavaScript source code locally:
+
+```bash
+npx hardhat functions-simulate-script
+```
+
+4. Deploy and verify your consumer contract:
+
+```bash
+npx hardhat functions-deploy-consumer --network network_name_here --verify true
+```
+
+5. Create and fund a Chainlink Functions subscription:
+
+```bash
+npx hardhat functions-sub-create --network network_name_here --amount LINK_funding_amount_here --contract 0x_deployed_client_contract_address_here
+```
+
+6. Make an on-chain request to fetch weather data:
+
+```bash
+npx hardhat functions-request --network network_name_here --contract 0xDeployed_client_contract_address_here --subid subscription_id_number_here
+```
+
+7. Read the latest weather data response from your contract:
+
+```bash
+npx hardhat functions-read --contract 0xConsumer_contract_address --network your_network_name
+```
+
+### Steps on Local Testnet
+
+1. Start the local Functions testnet:
+
+```bash
+npm run startLocalFunctionsTestnet
+```
+
+2. Follow the same workflow as above, omitting the `--network` flag.
+
+## Managing Secrets 🔐
+
+Secrets (like API keys) are securely managed using Chainlink's DON-hosted secrets. To upload secrets:
+
+```bash
+npx hardhat functions-upload-secrets-don --slotid 0 --network network_name_here --ttl 60
+```
+
+## Functions Command Glossary
+
+[Functions Commands](#functions-commands) and [Subscription Management Commands](#functions-subscription-management-commands) commands can be executed in the following format:
+`npx hardhat command_here --parameter1 parameter_1_value_here --parameter_2 parameter_2_value_here`
+
+Example: `npx hardhat functions-read --network polygonMumbai --contract 0x787Fe00416140b37B026f3605c6C72d096110Bb8`
+
+### Functions Commands
+
+| Command                            | Description                                                                                                                          | Parameters                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `compile`                          | Compiles all smart contracts                                                                                                         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `functions-simulate-script`        | Executes the JavaScript source code locally                                                                                          | `network`: Name of blockchain network, `configpath` (optional): Path to request config file (defaults to `./Functions-request-config.js`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `functions-deploy-consumer`        | Deploys the `FunctionsConsumer` contract                                                                                             | `network`: Name of blockchain network, `verify` (optional): Set to `true` to verify the deployed `FunctionsConsumer` contract (defaults to `false`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `functions-request`                | Initiates a request from a `FunctionsConsumer` contract using data from the Functions request config file                            | `network`: Name of blockchain network, `contract`: Address of the consumer contract to call, `subid`: Billing subscription ID used to pay for the request, `callbackgaslimit` (optional): Maximum amount of gas that can be used to call `fulfillRequest` in the consumer contract (defaults to 100,000 & must be less than 300,000), `slotid` (optional): Slot ID to use for uploading DON hosted secrets. If the slot is already in use, the existing encrypted secrets will be overwritten. (defaults to 0), `simulate` (optional, default true): Flag indicating if simulation should be run before making an on-chain request, `requestgaslimit` (optional): Gas limit for calling the sendRequest function (defaults to 1,500,000) `configpath` (optional): Path to request config file (defaults to `./Functions-request-config.js`) |
+| `functions-read`                   | Reads the latest response (or error) returned to a `FunctionsConsumer` or `AutomatedFunctionsConsumer` contract                      | `network`: Name of blockchain network, `contract`: Address of the consumer contract to read, `configpath` (optional): Path to request config file (defaults to `./Functions-request-config.js`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `functions-deploy-auto-consumer`   | Deploys the `AutomatedFunctionsConsumer` contract and sets the Functions request using data from the Functions request config file   | `network`: Name of blockchain network, `subid`: Billing subscription ID used to pay for Functions requests, `verify` (optional, default false): Set to `true` to verify the deployed `AutomatedFunctionsConsumer` contract, `configpath` (optional): Path to request config file (defaults to `./Functions-request-config.js`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `functions-set-auto-request`       | Updates the Functions request in deployed `AutomatedFunctionsConsumer` contract using data from the Functions request config file    | `network`: Name of blockchain network, `contract`: Address of the contract to update, `subid`: Billing subscription ID used to pay for Functions requests, `interval` (optional): Update interval in seconds for Chainlink Automation to call `performUpkeep` (defaults to 300), `slotid` (optional) 0 or higher integer denoting the storage slot for DON-hosted secrets, `ttl` (optional) the minutes after which DON hosted secrets must be expired, `gaslimit` (optional): Maximum amount of gas that can be used to call `fulfillRequest` in the consumer contract (defaults to 250,000), `simulate` (optional, default true): Flag indicating if simulation should be run before making an on-chain request, `configpath` (optional): Path to request config file (defaults to `./Functions-request-config.js`)                       |
+| `functions-check-upkeep`           | Checks if `checkUpkeep` returns true for an Automation compatible contract                                                           | `network`: Name of blockchain network, `contract`: Address of the contract to check, `data` (optional): Hex string representing bytes that are passed to the `checkUpkeep` function (defaults to empty bytes)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `functions-perform-upkeep`         | Manually call `performUpkeep` in an Automation compatible contract                                                                   | `network`: Name of blockchain network, `contract`: Address of the contract to call, `data` (optional): Hex string representing bytes that are passed to the `performUpkeep` function (defaults to empty bytes)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `functions-set-donid`              | Updates the DON ID for a consumer contract using the `donId` address from `networks.js`                                              | `network`: Name of blockchain network, `contract`: Address of the consumer contract to update                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `functions-build-request`          | Creates a JSON file with Functions request parameters including encrypted secrets, using data from the Functions request config file | `network`: Name of blockchain network, `output` (optional): Output JSON file name (defaults to _Functions-request.json_), `simulate` (optional, default true): Flag indicating if simulation should be run before building the request JSON file, `configpath` (optional): Path to request config file (defaults to `./Functions-request-config.js`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `functions-build-offchain-secrets` | Builds an off-chain secrets object that can be uploaded and referenced via URL                                                       | `network`: Name of blockchain network, `output` (optional): Output JSON file name (defaults to `offchain-encrypted-secrets.json`), `configpath` (optional): Path to request config file (defaults to `./Functions-request-config.js`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `functions-upload-secrets-don`     | Encrypts secrets and uploads them to the DON                                                                                         | `network`: Name of blockchain network, `configpath` (optional): Path to request config file (defaults to `./Functions-request-config.js`), `slotid` Storage slot number 0 or higher - if the slotid is already in use, the existing secrets for that slotid will be overwritten, `ttl` (optional): Time to live - minutes until the secrets hosted on the DON expire (defaults to 10, and must be at least 5)                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `functions-list-don-secrets`       | Displays encrypted secrets hosted on the DON                                                                                         | `network`: Name of blockchain network                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+
+### Functions Subscription Management Commands
+
+| Command                      | Description                                                                                                                              | Parameters                                                                                                                                                                                                                                                                   |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `functions-sub-create`       | Creates a new Functions billing subscription for Functions consumer contracts                                                            | `network`: Name of blockchain network, `amount` (optional): Initial amount used to fund the subscription in LINK (decimals are accepted), `contract` (optional): Address of the consumer contract to add to the subscription                                                 |
+| `functions-sub-info`         | Gets the Functions billing subscription balance, owner, and list of authorized consumer contract addresses                               | `network`: Name of blockchain network, `subid`: Subscription ID                                                                                                                                                                                                              |
+| `functions-sub-fund`         | Funds a Functions billing subscription with LINK                                                                                         | `network`: Name of blockchain network, `subid`: Subscription ID, `amount`: Amount to fund subscription in LINK (decimals are accepted)                                                                                                                                       |
+| `functions-sub-cancel`       | Cancels a Functions billing subscription and refunds the unused balance. Cancellation is only possible if there are no pending requests. | `network`: Name of blockchain network, `subid`: Subscription ID, `refundaddress` (optional): Address where the remaining subscription balance is sent (defaults to caller's address)                                                                                         |
+| `functions-sub-add`          | Authorizes a consumer contract to use the Functions billing subscription                                                                 | `network`: Name of blockchain network, `subid`: Subscription ID, `contract`: Address of the consumer contract to authorize for billing                                                                                                                                       |
+| `functions-sub-remove`       | Removes a consumer contract from a Functions billing subscription                                                                        | `network`: Name of blockchain network, `subid`: Subscription ID, `contract`: Address of the consumer contract to remove from billing subscription                                                                                                                            |
+| `functions-sub-transfer`     | Request ownership of a Functions subscription be transferred to a new address                                                            | `network`: Name of blockchain network, `subid`: Subscription ID, `newowner`: Address of the new owner                                                                                                                                                                        |
+| `functions-sub-accept`       | Accepts ownership of a Functions subscription after a transfer is requested                                                              | `network`: Name of blockchain network, `subid`: Subscription ID                                                                                                                                                                                                              |
+| `functions-timeout-requests` | Times out expired Functions requests which have not been fulfilled within 5 minutes                                                      | `network`: Name of blockchain network, `requestids`: 1 or more request IDs to timeout separated by commas, `toblock` (optional): Ending search block number (defaults to latest block), `pastblockstosearch` (optional): Number of past blocks to search (defaults to 1,000) |
+
+## Troubleshooting 🛠️
+
+- Ensure your subscription has sufficient LINK balance.
+- Verify your consumer contract is authorized in your subscription.
+- Check transaction errors using [Tenderly](https://tenderly.co).
+
+---
+
+## License
+
+MIT License
+
+Copyright (c) 2024
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+1. The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+2. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+
+Happy coding! 🌤️
