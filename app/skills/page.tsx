@@ -4,19 +4,28 @@ export const metadata = genPageMetadata({ title: 'Experience' });
 
 export default function Page() {
   const skills = {
-    Blockchain: ['Solidity', 'Ethereum', 'web3.js', 'Hardhat', 'NFTs'],
-    Frontend: ['JavaScript', 'HTML', 'CSS', 'ReactJS', 'Tailwind CSS', 'Bootstrap', 'NextJS'],
-    Backend: ['Node.js', 'ExpressJS', 'Java', 'Springboot', 'Microservice', 'Python'],
-    'Tools and Frameworks': [
-      'Git',
-      'Docker',
-      'Postman',
-      'API',
-      'HTTP Streaming',
-      'VScode',
-      'RemixIDE',
+    Blockchain: ['Solidity', 'Ethereum', 'Hardhat', 'Foundry', 'DeFi', 'NFTs'],
+    Frontend: [
+      'JavaScript',
+      'ReactJS',
+      'NextJS',
+      'HTML/CSS',
+      'Shadcn-ui',
+      'Tailwind CSS',
+      'Bootstrap',
     ],
-    Miscellaneous: ['DSA', 'Pandas'],
+    Backend: [
+      'NodeJS',
+      'Python',
+      'ExpressJS',
+      'Microservice',
+      'REST API',
+      'SQL',
+      'MongoDB',
+      'GraphQL',
+      'AWS',
+    ],
+    'Tools and Frameworks': ['Git', 'Redux', 'GraphQL', 'Docker', 'Postman', 'Pandas', 'Ethers.js'],
   };
 
   return (
