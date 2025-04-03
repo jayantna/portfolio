@@ -132,7 +132,9 @@ export default function Home() {
               Download Resume
             </h3>
           </div>
-          <p className="mt-2 text-gray-500 dark:text-gray-400">Get a copy of my resume.</p>
+          <p className="mt-2 text-left text-gray-500 dark:text-gray-400">
+            Get a copy of my resume.
+          </p>
         </button>
       </div>
 
