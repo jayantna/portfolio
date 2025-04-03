@@ -8,6 +8,13 @@ interface Project {
 
 const projectsData: Project[] = [
   {
+    title: 'Contractly - Self enforcing digital contracts',
+    description: `Contractly is the next evolution of digital contract platforms, enabling self-enforcing contracts that go beyond mere acceptance of terms. Built on smart contract technology.`,
+    imgSrc: '/static/images/contractly.png',
+    href: '',
+    blog: '/blog/contractly',
+  },
+  {
     title: 'Chainlink Functions Weather Dapp',
     description: `A simple weather decentalised app that uses Chainlink Functions to get the weather data.`,
     imgSrc: '/static/images/chainlink-functions-weather-dapp.png',
