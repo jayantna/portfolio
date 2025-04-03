@@ -5,44 +5,89 @@ export const metadata = genPageMetadata({ title: 'Experience' });
 export default function Page() {
   const timelineData = [
     {
-      date: 'Dec 2021 - Current',
-      title: 'TATA Consultancy Services',
-      role: 'System Engineer',
+      date: 'Dec 2021 - Dec 2024',
+      title: 'Tata Consultancy Services (TCS)',
+      role: 'Product Engineer',
       location: 'Pune, India',
       description: (
         <ul className="list-disc px-4">
           <li>
-            Experienced in developing scalable and performant applications, specializing in React
-            front-end development with expertise in state management, responsive design, and
-            testing, alongside backend development skills in API design, database management, and
-            microservices architecture.
+            Collaborated with a cross-functional team of application to implement new features, fix
+            defects, and enhance product capabilities, technical documenting, improving overall
+            quality and functionality.
           </li>
           <li>
-            Participated in change management process by evaluating proposed changes before they
-            were implemented into production environment.
+            Participated in the Agile development lifecycle, utilizing CI / CD pipelines to
+            streamline deployments and ensure continuous improvement.
           </li>
           <li>
-            Performed project upgrades and resolved bugs, while also contributing to enhancing
-            customer experience by providing insights on best practices for product usage to
-            customers.
+            Conducted code reviews to maintain high code quality and implemented TDD practices with
+            Jest and React Testing library achieving 90% code coverage and reduce defects.
           </li>
           <li>
-            Assisted in enhancing product capabilities by delivering new features and upgrading
-            functionality.
+            Developed REST APIs using a proprietary framework built on Java Spring Boot and Python
+            scripting.
+          </li>
+          <li>
+            Designed authentication service utilizing the O Auth2 standard to support multiuser
+            experience.
+          </li>
+          <li>
+            Enabled client to migrate their legacy VBA application to a modern web app with over 140
+            screens, using Redux-toolkit for state management and integrating multiple APIs,
+            increasing effi ciency by over 30%.
+          </li>
+          <li>
+            Identified and resolved security vulnerabilities in packages, enhancing the safety of
+            web applications.
+          </li>
+        </ul>
+      ),
+    },
+    {
+      date: 'Aug 2022',
+      title: 'Musse - NFT Marketplace',
+      role: 'Opensource Contributor',
+      location: 'Remote, Part time',
+      description: (
+        <ul className="list-disc px-4">
+          <li>
+            Developed frontend for a multi-chain NFT marketplace, integrating Ethereum, Polygon, and
+            other EVM.
+          </li>
+          <li>
+            Utilized Ethers.js & Hardhat for blockchain integration, enabling on-chain NFT minting,
+            trading, and metadata management.
+          </li>
+          <li>
+            Advised NFT rarity farming mechanics inspired by Aavegotchi, allowing users to compete
+            for rewards based on dynamic trait evaluation.
+          </li>
+          <li>
+            Contributed smart contracts development for NFT staking mechanism, allowing users to
+            lock NFTs and earn on-chain rewards based on predefined rarity attributes.
           </li>
         </ul>
       ),
     },
     {
       date: 'Feb 2021 - Nov 2021',
-      title: 'TATA Consultancy Services',
-      role: 'Assistant System Engineer',
+      title: 'Tata Consultancy Services (TCS)',
+      role: 'System Engineer',
       location: 'Pune, India',
       description: (
         <ul className="list-disc px-4">
           <li>
-            Assisted developer team in managing application incidents and ensuring uninterrupted
-            business operations under transportation domain
+            Assisted developer team in managing application incidents. Used JIRA to track and
+            resolve over 150 tickets per month and ensuring uninterrupted business operations as L3
+            support.
+          </li>
+          <li>
+            Retrieving vehicle statistics for an insurance claim requested by the policyholder.
+          </li>
+          <li>
+            Monitoring application's performance metrics, such as response time, server load, and
+            user interactions, during periods of peak usage.
           </li>
         </ul>
       ),
@@ -58,12 +103,6 @@ export default function Page() {
           </h1>
         </div>
         <div className="py-5">
-          <div className="pb-6">
-            In my full-time roles, I've collaborated with cross-functional teams to develop, test,
-            and deploy applications that meet client and user needs. My experience working in a team
-            setting has honed my problem-solving skills and taught me the importance of clear
-            communication and effective project management.
-          </div>
           {timelineData.map((event, index) => (
             <div
               className="relative mb-8 flex before:absolute before:bottom-0 before:left-2.5 before:top-5 before:w-[1px] before:bg-gray-500 before:content-['']"

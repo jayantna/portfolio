@@ -4,28 +4,33 @@ export const metadata = genPageMetadata({ title: 'Experience' });
 
 export default function Page() {
   const skills = {
-    Blockchain: ['Solidity', 'Ethereum', 'Hardhat', 'Foundry', 'DeFi', 'NFTs'],
+    Blockchain: [
+      'Solidity',
+      'EVM',
+      'Hardhat',
+      'Foundry',
+      'DeFi',
+      'NFTs',
+      'IPFS',
+      'Ethers.js',
+      'Flashbot Bundler',
+      'Wallet Integration',
+      'Consensus Algorithms',
+    ],
     Frontend: [
-      'JavaScript',
       'ReactJS',
       'NextJS',
+      'TypeScript',
+      'JavaScript',
       'HTML/CSS',
       'Shadcn-ui',
       'Tailwind CSS',
       'Bootstrap',
     ],
-    Backend: [
-      'NodeJS',
-      'Python',
-      'ExpressJS',
-      'Microservice',
-      'REST API',
-      'SQL',
-      'MongoDB',
-      'GraphQL',
-      'AWS',
-    ],
-    'Tools and Frameworks': ['Git', 'Redux', 'GraphQL', 'Docker', 'Postman', 'Pandas', 'Ethers.js'],
+    Backend: ['NodeJS', 'Python', 'Rust', 'C++'],
+    Database: ['SQL Database', 'GraphQL', 'MongoDB'],
+    'Tools and Frameworks': ['Git', 'Redux', 'Postman', 'Pandas', 'ExpressJS'],
+    Misc: ['Problem Solving', 'Analytical', 'Leadership', 'Product Development'],
   };
 
   return (
@@ -59,9 +64,9 @@ export default function Page() {
                       {skillList.map((skill, index) => (
                         <span
                           key={index}
-                          className="my-1 mr-2 cursor-default border border-gray-200
-                          bg-gray-100 px-3 py-1 font-sourceCode
-                          text-sm font-medium text-gray-800 hover:bg-primary-200 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-primary-700"
+                          className="my-1 mr-2 cursor-default rounded-xl border
+                          border-gray-200 bg-gray-100 px-3 py-1
+                          font-sourceCode text-sm font-medium text-gray-800 hover:bg-primary-200 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-primary-700"
                         >
                           {skill}
                         </span>

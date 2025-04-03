@@ -13,6 +13,8 @@ import { FaEnvelope, FaComments, FaFileDownload } from 'react-icons/fa'; // Impo
 export default function Home() {
   const name: string = 'Jayant.devhub';
   const [nextRender, setNextRender] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleTypingComplete = useCallback(() => {
     setNextRender(true);
   }, []);
@@ -46,6 +48,17 @@ export default function Home() {
     'ExpressJS',
     'SQL',
   ];
+
+  const handleDownloadClick = (resumeType) => {
+    if (resumeType === 'Web') {
+      window.open('/files/jayant_webdev_resume.pdf', '_blank');
+    } else if (resumeType === 'Blockchain') {
+      window.open('/files/jayant_blockchaindev_resume.pdf', '_blank');
+    } else {
+      setIsModalOpen(false);
+    }
+    setIsModalOpen(false);
+  };
 
   return (
     <>
@@ -109,10 +122,9 @@ export default function Home() {
           </p>
         </a>
 
-        <a
-          href="/files/resume.pdf"
+        <button
+          onClick={() => setIsModalOpen(true)}
           className="m-4 flex w-full cursor-pointer flex-col justify-between rounded-lg border border-gray-300 bg-white p-4 shadow-md transition-shadow duration-300 hover:shadow-lg dark:border-gray-600 dark:bg-gray-900 sm:w-1/3 md:min-h-[130px] lg:min-h-[130px]"
-          download
         >
           <div className="flex items-center">
             <FaFileDownload className="mr-2 text-3xl text-primary-500 dark:text-primary-500" />
@@ -121,8 +133,36 @@ export default function Home() {
             </h3>
           </div>
           <p className="mt-2 text-gray-500 dark:text-gray-400">Get a copy of my resume.</p>
-        </a>
+        </button>
       </div>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
+          <div className="rounded-lg bg-white bg-opacity-70 p-6 shadow-lg dark:bg-gray-800">
+            <h2 className="mb-4 text-lg font-semibold text-gray-700 dark:text-gray-300">
+              Select resume to download
+            </h2>
+            <button
+              onClick={() => handleDownloadClick('Web')}
+              className="mb-2 block w-full rounded p-2 text-left text-gray-700 hover:bg-gray-600 hover:text-white dark:text-gray-300"
+            >
+              Web Developer
+            </button>
+            <button
+              onClick={() => handleDownloadClick('Blockchain')}
+              className="mb-2 block w-full rounded p-2 text-left text-gray-700 hover:bg-gray-600 hover:text-white dark:text-gray-300"
+            >
+              Blockchain Developer
+            </button>
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="mt-4 w-full rounded bg-primary-600 p-2 text-white"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className="relative my-4 hidden lg:block">
         <div className="absolute left-0 top-0 z-10 h-full w-[20%] bg-gradient-to-r from-white to-transparent dark:from-gray-950"></div>
