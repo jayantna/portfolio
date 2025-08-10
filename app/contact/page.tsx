@@ -85,7 +85,6 @@ export default function Page() {
                 value={process.env.NEXT_PUBLIC_TO_NAME}
                 onChange={handleChange}
                 placeholder="Recipient"
-                required
               />
               <textarea
                 name="message"
