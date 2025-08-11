@@ -15,20 +15,20 @@ export default function Page() {
             Led the architecture and development of a decentralized exchange (DEX) designed to
             integrate with a portfolio management system. The project was built on the Stellar
             blockchain, utilizing Soroban smart contracts to power a secure smart vault and
-            integrating with the Soroswap DEX router to facilitate token swaps and
-            liquidity management.
+            integrating with the Soroswap DEX router to facilitate token swaps and liquidity
+            management.
           </li>
           <li>
-            Leveraged the SubQuery SDK to develop custom Blockchain Indexer, to efficiently query, filter,
-            and store blockchain data, enabling live data fetching for an application.
+            Leveraged the SubQuery SDK to develop custom Blockchain Indexer, to efficiently query,
+            filter, and store blockchain data, enabling live data fetching for an application.
           </li>
           <li>
             Conducted code reviews to maintain high code quality and implemented TDD practices with
             Jest and React Testing library achieving 90% code coverage and reduce defects.
           </li>
           <li>
-            Implemented Soroban smart contract wallet to manage on-chain assets, utilizing the Stellar SDK for transaction
-            building and interaction.
+            Implemented Soroban smart contract wallet to manage on-chain assets, utilizing the
+            Stellar SDK for transaction building and interaction.
           </li>
         </ul>
       ),
@@ -134,7 +134,7 @@ export default function Page() {
         <div className="py-5">
           {timelineData.map((event, index) => (
             <div
-              className="relative pb-8 flex before:absolute before:bottom-0 before:left-2.5 before:top-5 before:w-[1px] before:bg-gray-500 before:content-['']"
+              className="relative flex pb-8 before:absolute before:bottom-0 before:left-2.5 before:top-5 before:w-[1px] before:bg-gray-500 before:content-['']"
               key={index}
             >
               {/* Timeline Dot */}
