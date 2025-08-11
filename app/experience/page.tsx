@@ -5,6 +5,35 @@ export const metadata = genPageMetadata({ title: 'Experience' });
 export default function Page() {
   const timelineData = [
     {
+      date: 'Apr 2025 - Present',
+      title: 'Autowhale GmbH',
+      role: 'Fullstack Blockchain Developer',
+      location: 'Remote, Austria',
+      description: (
+        <ul className="list-disc px-4">
+          <li>
+            Led the architecture and development of a decentralized exchange (DEX) designed to
+            integrate with a portfolio management system. The project was built on the Stellar
+            blockchain, utilizing Soroban smart contracts to power a secure smart vault and
+            integrating with the Soroswap DEX router to facilitate token swaps and
+            liquidity management.
+          </li>
+          <li>
+            Leveraged the SubQuery SDK to develop custom Blockchain Indexer, to efficiently query, filter,
+            and store blockchain data, enabling live data fetching for an application.
+          </li>
+          <li>
+            Conducted code reviews to maintain high code quality and implemented TDD practices with
+            Jest and React Testing library achieving 90% code coverage and reduce defects.
+          </li>
+          <li>
+            Implemented Soroban smart contract wallet to manage on-chain assets, utilizing the Stellar SDK for transaction
+            building and interaction.
+          </li>
+        </ul>
+      ),
+    },
+    {
       date: 'Dec 2021 - Dec 2024',
       title: 'Tata Consultancy Services (TCS)',
       role: 'Product Engineer',
