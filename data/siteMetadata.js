@@ -5,15 +5,14 @@ const siteMetadata = {
   headerTitle: 'Jayant.Devhub',
   description: 'A portfolio showcasing my development gigs.',
   language: 'en-us',
-  theme: 'light', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
+  theme: 'system', // system, dark or light
+  siteUrl: 'https://www.jayantdevhub.in',
   siteRepo: 'https://github.com/jayantna/portfolio/tree/main',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png?v=2',
   email: 'contact@jayantdevhub.in',
   github: 'https://github.com/jayantna',
   x: 'https://x.com/thejnbtc',
-  // twitter: 'https://twitter.com/Twitter',
   linkedin: 'https://www.linkedin.com/jayantn',
   locale: 'en-US',
   analytics: {
