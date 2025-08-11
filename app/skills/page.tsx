@@ -7,6 +7,7 @@ export default function Page() {
     Blockchain: [
       'Solidity',
       'EVM',
+      'Soroban',
       'Hardhat',
       'Foundry',
       'DeFi',

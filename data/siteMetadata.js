@@ -9,7 +9,7 @@ const siteMetadata = {
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
   siteRepo: 'https://github.com/jayantna/portfolio/tree/main',
   siteLogo: '/static/images/logo.png',
-  socialBanner: '/static/images/twitter-card.png',
+  socialBanner: '/static/images/twitter-card.png?v=2',
   email: 'contact@jayantdevhub.in',
   github: 'https://github.com/jayantna',
   x: 'https://x.com/thejnbtc',

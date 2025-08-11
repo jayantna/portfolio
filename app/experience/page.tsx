@@ -134,7 +134,7 @@ export default function Page() {
         <div className="py-5">
           {timelineData.map((event, index) => (
             <div
-              className="relative mb-8 flex before:absolute before:bottom-0 before:left-2.5 before:top-5 before:w-[1px] before:bg-gray-500 before:content-['']"
+              className="relative pb-8 flex before:absolute before:bottom-0 before:left-2.5 before:top-5 before:w-[1px] before:bg-gray-500 before:content-['']"
               key={index}
             >
               {/* Timeline Dot */}
