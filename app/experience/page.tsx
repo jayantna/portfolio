@@ -12,23 +12,26 @@ export default function Page() {
       description: (
         <ul className="list-disc px-4">
           <li>
-            Led the architecture and development of a decentralized exchange (DEX) designed to
-            integrate with a portfolio management system. The project was built on the Stellar
-            blockchain, utilizing Soroban smart contracts to power a secure smart vault and
-            integrating with the Soroswap DEX router to facilitate token swaps and liquidity
-            management.
+            Led the architecture and development of a decentralized exchange <strong>(DEX)</strong>{' '}
+            designed to integrate with a <strong>portfolio management system.</strong> The project
+            was built on the Stellar blockchain, utilizing <strong>Soroban</strong> smart contracts
+            written in <strong>Rust</strong>, to power a secure smart vault and integrating with the{' '}
+            <strong>Soroswap DEX</strong> router to facilitate token swaps and liquidity management.
           </li>
           <li>
-            Leveraged the SubQuery SDK to develop custom Blockchain Indexer, to efficiently query,
-            filter, and store blockchain data, enabling live data fetching for an application.
+            Leveraged the <strong>SubQuery SDK</strong> to develop custom{' '}
+            <strong>Blockchain Indexer</strong>, to efficiently query, filter, and store blockchain
+            data, enabling live data fetching for an application.
           </li>
           <li>
-            Conducted code reviews to maintain high code quality and implemented TDD practices with
-            Jest and React Testing library achieving 90% code coverage and reduce defects.
+            Integrated Soroban <strong>smart wallet</strong> to manage on-chain assets, utilizing
+            the
+            <strong>Stellar SDK</strong> for transaction building and interaction.
           </li>
           <li>
-            Implemented Soroban smart contract wallet to manage on-chain assets, utilizing the
-            Stellar SDK for transaction building and interaction.
+            Implemented <strong>JWT</strong> based API authentication secured by{' '}
+            <strong>Web3 wallet signatures</strong> (challenge-response protocol) to govern access
+            to all protected resource endpoints.
           </li>
         </ul>
       ),
@@ -41,34 +44,39 @@ export default function Page() {
       description: (
         <ul className="list-disc px-4">
           <li>
-            Collaborated with a cross-functional team of application to implement new features, fix
-            defects, and enhance product capabilities, technical documenting, improving overall
-            quality and functionality.
+            Collaborated with a cross-functional team of application to{' '}
+            <strong>
+              implement new features, fix defects, and enhance product capabilities, technical
+              documenting, improving overall quality and functionality.
+            </strong>
           </li>
           <li>
-            Participated in the Agile development lifecycle, utilizing CI / CD pipelines to
-            streamline deployments and ensure continuous improvement.
+            Participated in the <strong>Agile development lifecycle</strong>, utilizing{' '}
+            <strong>CI / CD pipelines</strong> to streamline deployments and ensure continuous
+            improvement.
           </li>
           <li>
-            Conducted code reviews to maintain high code quality and implemented TDD practices with
-            Jest and React Testing library achieving 90% code coverage and reduce defects.
+            Conducted <strong>code reviews</strong> to maintain high code quality and implemented{' '}
+            <strong>TDD practices</strong> with
+            <strong>Jest and React Testing library</strong> achieving{' '}
+            <strong>90% code coverage</strong> and reduce defects.
           </li>
           <li>
-            Developed REST APIs using a proprietary framework built on Java Spring Boot and Python
-            scripting.
+            Developed <strong>REST APIs</strong> using a proprietary framework built on{' '}
+            <strong>Java Spring Boot and Python scripting</strong>.
           </li>
           <li>
-            Designed authentication service utilizing the O Auth2 standard to support multiuser
-            experience.
+            Designed authentication service utilizing the <strong>O-Auth2</strong> standard to
+            support multiuser experience.
           </li>
           <li>
             Enabled client to migrate their legacy VBA application to a modern web app with over 140
-            screens, using Redux-toolkit for state management and integrating multiple APIs,
-            increasing effi ciency by over 30%.
+            screens, using Redux-toolkit for state management and integrating multiple{' '}
+            <strong>APIs, increasing efficiency by over 30%.</strong>
           </li>
           <li>
-            Identified and resolved security vulnerabilities in packages, enhancing the safety of
-            web applications.
+            Identified and resolved <strong>security vulnerabilities</strong> in packages, enhancing
+            the safety of web applications.
           </li>
         </ul>
       ),
@@ -81,20 +89,21 @@ export default function Page() {
       description: (
         <ul className="list-disc px-4">
           <li>
-            Developed frontend for a multi-chain NFT marketplace, integrating Ethereum, Polygon, and
-            other EVM.
+            <strong>Developed frontend</strong> for a multi-chain NFT marketplace, integrating{' '}
+            <strong>Ethereum, Polygon, and other EVM.</strong>
           </li>
           <li>
-            Utilized Ethers.js & Hardhat for blockchain integration, enabling on-chain NFT minting,
-            trading, and metadata management.
+            Utilized <strong>Ethers.js & Hardhat for blockchain integration</strong>, enabling
+            on-chain NFT minting, trading, and metadata management.
           </li>
           <li>
-            Advised NFT rarity farming mechanics inspired by Aavegotchi, allowing users to compete
-            for rewards based on dynamic trait evaluation.
+            Advised <strong>NFT rarity farming</strong> mechanics inspired by Aavegotchi, allowing
+            users to compete for rewards based on dynamic trait evaluation.
           </li>
           <li>
-            Contributed smart contracts development for NFT staking mechanism, allowing users to
-            lock NFTs and earn on-chain rewards based on predefined rarity attributes.
+            <strong>Contributed smart contracts development for NFT staking mechanism,</strong>{' '}
+            allowing users to lock NFTs and earn on-chain rewards based on predefined rarity
+            attributes.
           </li>
         </ul>
       ),

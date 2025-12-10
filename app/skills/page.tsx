@@ -5,15 +5,16 @@ export const metadata = genPageMetadata({ title: 'Experience' });
 export default function Page() {
   const skills = {
     Blockchain: [
-      'Solidity',
-      'EVM',
-      'Soroban',
+      'EVM (Solidity)',
+      'Solana (Anchor)',
+      'Stellar(Soroban)',
       'Hardhat',
       'Foundry',
       'DeFi',
       'NFTs',
       'IPFS',
       'Ethers.js',
+      'Web3.js',
       'Flashbot Bundler',
       'Wallet Integration',
       'Consensus Algorithms',
